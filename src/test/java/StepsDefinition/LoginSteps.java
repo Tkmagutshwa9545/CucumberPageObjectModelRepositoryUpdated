@@ -16,7 +16,7 @@ public class LoginSteps extends BaseClass {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         loginPage = new LoginPage(driver);
-        System.out.println("Inside Launch browser");
+        System.out.println("I am inside Launch browser");
     }
 
     @And("^I navigate to home page$")
@@ -24,43 +24,43 @@ public class LoginSteps extends BaseClass {
         driver.get(url);
         driver.manage().window().maximize();
         Thread.sleep(2000);
-        System.out.println("Inside Navigate to home");
+        System.out.println("I am inside Navigate to home");
     }
 
     @And("^I click login on account menu$")
     public void iClickLoginOnAccountMenu(){
         loginPage.ClickOnAccountLink();
-        System.out.println("Inside Account Menu");
+        System.out.println("I am inside Account Menu");
     }
 
     @Then("^I click login link$")
     public void iClickLoginLink() {
         loginPage.ClickLoginLink();
-        System.out.println("Inside click Link");
+        System.out.println("I am inside click Link");
     }
     @When("^I enter (.*) and (.*)$")
     public void iEnterUsernameAndPassword(String uid, String pws) {
         loginPage.EnterEmailAndPassword(uid,pws);
-        System.out.println("Inside username and password");
+        System.out.println("I am inside username and password");
     }
     @And("^I click login button$")
     public void iClickLoginButton() throws InterruptedException {
         loginPage.ClickLoginButton();
         Thread.sleep(2000);
-        System.out.println("Inside click button");
+        System.out.println(" I am inside click button");
     }
 
     @When("^I search for item$")
     public void iSearchForItem() {
         loginPage.SearchTextBox("MacBook Air");
         loginPage.ClickSearchButton();
-        System.out.println("Inside search for item$");
+        System.out.println("I am inside search for item$");
     }
 
     @And("I should see the items on the result$")
     public void iShouldSeeTheItemsOnTheResult() {
         loginPage.CheckItemDisplay();
-        System.out.println("Inside Results");
+        System.out.println(" I am inside Results");
     }
 
     @Then("^User logout$")
@@ -68,7 +68,7 @@ public class LoginSteps extends BaseClass {
         loginPage.ClickOnAccountLink();
         loginPage.LogOut();
         driver.quit();
-        System.out.println("Inside Logout");
+        System.out.println("I am inside Logout");
     }
 
 
